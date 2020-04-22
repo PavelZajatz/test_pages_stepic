@@ -16,6 +16,9 @@ class ProductPageLocators():
     BOOK_NAME_BASKET = (By.CSS_SELECTOR, "#messages>div:nth-child(1) strong")
     BOOK_PRICE_BASKET = (By.CSS_SELECTOR, "#messages>div:nth-child(3) strong")
     SUCCESS_MESSAGE = (By.CSS_SELECTOR, "#messages>div:nth-child(1)")
+    BASKET_BUTTON = (By.XPATH, "//span[@class='btn-group']/a[@href='/en-gb/basket/']")
+    EMPTY_BASKET = (By.CSS_SELECTOR, ".basket-items")
+    BASKET_EMPTY_MESSAGE = (By.XPATH, "//p[contains(text(),'Your basket is empty.')]")
 
 class BasePageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
