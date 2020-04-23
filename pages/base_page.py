@@ -12,13 +12,13 @@ import math
 
 
 class BasePage():
-    def __init__(self, browser, url, timeout=10):
+    def __init__(self, browser, link, timeout=10):
         self.browser = browser
-        self.url = url
+        self.link = link
         self.browser.implicitly_wait(timeout)
 
     def open(self):
-        self.browser.get(self.url)
+        self.browser.get(self.link)
 
     def go_to_login_page(self):
         link = self.browser.find_element(*BasePageLocators.LOGIN_LINK)
@@ -33,6 +33,10 @@ class BasePage():
             return True
         except NoSuchElementException:
             return False
+
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*BasePageLocators.USER_ICON), "User icon is not presented," \
+                                                                     " probably unauthorised user"
 
     def is_element_present(self, how, what):
         try:
