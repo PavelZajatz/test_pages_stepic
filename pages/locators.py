@@ -1,10 +1,10 @@
 from selenium.webdriver.common.by import By
 
 
-class MainPageLocators():
+class MainPageLocators(): #локаторы главной страницы
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
-class LoginPageLocators():
+class LoginPageLocators(): #локаторы страницы логина
     LOGIN_URL = (By.CSS_SELECTOR, "#login_link")
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTER_FORM = (By.CSS_SELECTOR, "#register_form")
@@ -13,7 +13,7 @@ class LoginPageLocators():
     REGISTER_PASSWORD2 = (By.ID, 'id_registration-password2')
     SUBMIT_BUTTON = (By.CSS_SELECTOR, 'button[name^="registration_submit"]')
 
-class ProductPageLocators():
+class ProductPageLocators(): #локаторы страницы товара
     ADD_TO_BASKET = (By.CSS_SELECTOR, ".btn-add-to-basket")
     BOOK_NAME = (By.CSS_SELECTOR, ".product_main h1")
     BOOK_PRICE = (By.CSS_SELECTOR, ".col-sm-6.product_main .price_color")
