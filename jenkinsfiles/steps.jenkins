@@ -7,14 +7,14 @@ pipeline{
         label 'master'
         }
     stages{
-        stage("Test main page"){
-            steps {
-                bat 'pytest test_main_page.py'
-            }
-        }
         stage("Test product page"){
             steps {
                 bat 'pytest test_product_page.py'
+            }
+        }
+        stage("Test main page"){
+            steps {
+                bat 'pytest test_main_page.py'
             }
         }
     }
