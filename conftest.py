@@ -20,7 +20,9 @@ def browser(request):
     browser_name = request.config.getoption("browser_name")
     if browser_name == "chrome":
         options = Options()
+        options.add_argument('--headless')
         options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
         options.add_experimental_option("prefs", {"intl.accept_languages": user_language})
         browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     elif browser_name == "firefox":
