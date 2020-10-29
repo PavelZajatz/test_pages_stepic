@@ -5,11 +5,13 @@ from webdriver_manager.firefox import GeckoDriverManager
 from selenium.webdriver.chrome.options import Options
 import time
 
+
 def pytest_addoption(parser):
     parser.addoption('--browser_name', action='store', default="chrome",
-                         help="Choose browser: chrome or firefox")
+                     help="Choose browser: chrome or firefox")
     parser.addoption('--language', action='store', default=None,
-                         help="Choose language: ec or fr")
+                     help="Choose language: ec or fr")
+
 
 @pytest.fixture(scope="class")
 def browser(request):
@@ -20,7 +22,7 @@ def browser(request):
         options = Options()
         options.add_experimental_option("prefs", {"intl.accept_languages": user_language})
         browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-    elif (browser_name=="firefox"):
+    elif (browser_name == "firefox"):
         fp = webdriver.FirefoxProfile()
         fp.set_preference("intl.accept_languages", user_language)
         browser = webdriver.Firefox(executable_path=GeckoDriverManager().install(), firefox_profile=fp)
