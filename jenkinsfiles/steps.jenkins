@@ -9,12 +9,12 @@ pipeline{
     stages{
         stage("Test main page"){
             steps {
-                sh 'pytest test_main_page.py'
+                bat 'pytest test_main_page.py'
             }
         }
         stage("Test product page"){
             steps {
-                sh 'pytest test_product_page.py'
+                bat 'pytest test_product_page.py'
             }
         }
     }
