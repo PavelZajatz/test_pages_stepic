@@ -9,7 +9,7 @@ pipeline{
     stages{
         stage("docker-compose up"){
             steps {
-                bat 'docker-compose up'
+                bat 'docker-compose up -d'
             }
         }
         stage("Test product page"){
