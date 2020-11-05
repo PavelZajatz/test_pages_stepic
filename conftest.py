@@ -26,12 +26,12 @@ def browser(request):
         options.add_argument('--disable-dev-shm-usage')
         options.add_experimental_option("prefs", {"intl.accept_languages": user_language})
         # browser = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-        browser = webdriver.Remote('http://0.0.0.0:4444/wd/hub', desired_capabilities=DesiredCapabilities.CHROME)
+        browser = webdriver.Remote('http://10.6.0.30:4444/wd/hub', desired_capabilities=DesiredCapabilities.CHROME)
     elif browser_name == "firefox":
         fp = webdriver.FirefoxProfile()
         fp.set_preference("intl.accept_languages", user_language)
         #browser = webdriver.Firefox(executable_path=GeckoDriverManager().install(), firefox_profile=fp)
-        browser = webdriver.Remote('http://0.0.0.0:4444/wd/hub', desired_capabilities=DesiredCapabilities.FIREFOX)
+        browser = webdriver.Remote('http://localhost:4444/wd/hub', desired_capabilities=DesiredCapabilities.FIREFOX)
     else:
         print("Browser <browser_name> is still not implemented")
     yield browser
