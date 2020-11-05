@@ -7,14 +7,19 @@ pipeline{
         label 'master'
         }
     stages{
-        stage("Test product page"){
+        stage("docker-compose up"){
             steps {
-                bat 'pytest test_product_page.py'
+                bat 'docker-compose up'
             }
         }
-        stage("Test main page"){
+        stage("Test product page"){
             steps {
                 bat 'pytest test_main_page.py'
+            }
+        }
+        stage("docker-compose stop"){
+            steps {
+                bat 'docker-compose stop'
             }
         }
     }
